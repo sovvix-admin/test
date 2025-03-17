@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+</head>
+<body>
+    <h1>Detection Results</h1>
+    <h2>Original Image</h2>
+    <img src="{{ original_image }}" alt="Original Image" style="max-width: 100%;">
+    <h2>Processed Image</h2>
+    <img src="{{ processed_image }}" alt="Processed Image" style="max-width: 100%;">
+    
+    <h2>Detected Objects</h2>
+    {% if detected_objects %}
+        <ul>
+            {% for obj in detected_objects %}
+                <li>
+                    <strong>{{ obj.label }}</strong> (Confidence: {{ obj.confidence|floatformat:2 }})
+                    <br>Bounding Box: {{ obj.box }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No objects detected.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Upload Another Image</a>
+</body>
+</html>

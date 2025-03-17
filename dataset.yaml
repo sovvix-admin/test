@@ -1,0 +1,6 @@
+train: C:\Users\dev12\OneDrive\Documents\Model\train # Path to the training images folder
+val: C:\Users\dev12\OneDrive\Documents\Model\validation    # Path to the validation images folder
+test: C:\Users\dev12\OneDrive\Documents\Model\test
+
+nc: 2  # Number of classes (fan and bulb)
+names: ['Ceiling_fan','Light_bulb']  # List of class names (must match the labels in your dataset)
